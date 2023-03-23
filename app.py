@@ -10,6 +10,7 @@ sheet = workbook.active
 # adicionar dados às células
 sheet["A1"] = "Hello"
 sheet["B1"] = "World"
+sheet["C1"] = "Teste"
 
 # salvar o arquivo Excel
 path = os.path.expanduser(r"C:\Users\anaes\Documents\Estudos\testes")
