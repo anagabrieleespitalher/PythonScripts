@@ -1,18 +1,11 @@
-import openpyxl
 import os
+import win32com.client as win32 
+import schedule
 
 # criar um novo arquivo Excel
-workbook = openpyxl.Workbook()
+def ab_o_opera():
+    opera = os.startfile("C:\\Users\\anaes\\AppData\\Local\\Programs\\Opera GX\\launcher.exe")
+    opera.write("https://www.google.com.br")
 
-# selecionar a planilha ativa
-sheet = workbook.active
 
-# adicionar dados às células
-sheet["A1"] = "Hello"
-sheet["B1"] = "World"
-sheet["C1"] = "Teste"
-
-# salvar o arquivo Excel
-path = os.path.expanduser(r"C:\Users\anaes\Documents\Estudos\testes")
-filename = "exemplo.xlsx"
-workbook.save(os.path.join(path, filename))
+ab_o_opera()
