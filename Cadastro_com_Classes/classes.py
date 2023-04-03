@@ -22,7 +22,18 @@ class Employee:
     def apply_raise(self):
         self.pay = int(self.pay * self.raise_mount)
 
+    #repr é usada para debbug/logging e coisas assim
+    def __repr__(self):
+        return "Employee('{}','{}','{}').format(self.first, self.last, self.pay) "
+
+    #str é usada como uma interface para ler, display pro end-user
+    def __str__(self):
+        return '{}-{}'.format(self.fullname(), self.email)
      
+    #Adiciona o salario de um funcionadrio com o outro
+    def __add__(self, other):
+        return self.pay + other.pay
+
     #criação de classes, sempre recebe o metodo de classe cls
     @classmethod 
     def set_raise_amt(cls, amount):
@@ -81,24 +92,3 @@ dev_1 = developer('Ana','Espitalher', 2500, 'Python')
 dev_2 = developer('Henrique', 'Ferreira', 4000, 'Java')
 emp_1 = Employee('Rodrigo', 'Alves', 6000)
 
-mgr_1 = manager('Ana', 'Rocha', 10000, [emp_1,dev_2])
-print(mgr_1.email)
-
-mgr_1.add_em(dev_1)
-mgr_1.remove_emp(emp_1)
-
-print(mgr_1.print_emps())
-
-
-""" 
-print(dev_1.prog_lang)
-dev_1.apply_raise()
-print(dev_2.prog_lang)
-print(dev_1.email)
-print(dev_2.email)
-print(emp_1.email)
-
-#output empregados
-print(Employee.num_of_emps)
-
- """
